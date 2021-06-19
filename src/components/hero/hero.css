@@ -1,0 +1,36 @@
+.hero{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+.hero .container{
+    color: white;
+    flex-direction: column;
+    min-height: 50vh;
+    width: max(300px, 70vw);
+}
+.hero .container h1,.container h2{
+    text-align: center;
+}
+.hero .container h1{
+    font-size: 66px;
+    line-height: 80px;
+    font-weight: 700;
+    margin-top: 80px;
+}
+.hero .container h2{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+    line-height: 30px;
+}
+.hero .upload-button-container{
+    margin-top: 40px;
+}
+.hero .upload-button-container button{
+    background-color: #fff;
+    color: var(--primary-color);
+    font-weight: 600;
+    border-radius: 500px;
+    padding: 12px 56px;
+    font-size: 18px;
+}
