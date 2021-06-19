@@ -1,0 +1,28 @@
+.nav{
+    padding: 20px 50px;
+    background-color: var(--primary-color);
+}
+
+.nav .logo-container{
+    color: white;
+    font-weight: 600;
+}
+.nav .logo-container span{
+    font-size: 2rem;
+}
+.navbar {
+    min-width: 300px;
+    font-weight: 600;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+}
+.navbar button{
+    color: white;
+    border: white 1px solid;
+    border-radius: 500px;
+    opacity: 1;
+    font-weight: 600;
+}
