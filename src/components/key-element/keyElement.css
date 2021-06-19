@@ -1,0 +1,30 @@
+.fullHeight{
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.fullHeight .container{
+    flex-direction: column;
+    height:100%;
+    width: 40%;
+    margin-left: 10%;
+    color: #fff;
+}
+.heading-text{
+    font-size: 66px;
+    font-weight: 700;
+}
+.para-text{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 30px 0;
+}
+.fullHeight .container button{
+    padding: 16px 40px;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: #fff;
+    color: #000;
+    border-radius: 500px;
+}
