@@ -10,7 +10,7 @@ function Signup() {
         <div className="form-container">
           <form className="signup-form" onSubmit={submitForm}>
             <h1>Signup Form </h1>
-            <p>(optional)</p>
+          
             <div className="name">
               <label htmlFor="fullName">Full Name</label>
               <input type="text" id="fullName" required placeholder="Your full name" maxLength="50" minLength="2" />

@@ -5,8 +5,8 @@ function Key(props) {
     document.querySelector("#hero").scrollIntoView()
   }
   return (
-    <section className="fullHeight" style={{backgroundImage:`url(${props.box.image})`}}>
-      <div className="container d-flex justify-content-center">
+    <section className={props.box.invert?"containerInvert fullHeight":"fullHeight"} style={{backgroundImage:`url(${props.box.image})`}}>
+      <div className="container  d-flex justify-content-center">
         <h3 className="heading-text">{props.box.heading}</h3>
         <p className="para-text">{props.box.para}</p>
         <div>
