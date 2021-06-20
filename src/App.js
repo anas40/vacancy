@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom';
 
 import Footer from './components/footer/index.js';
 import Header from './components/header/index.js';
@@ -12,6 +12,7 @@ function App() {
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/register' component={Signup} />
+        <Redirect to='/' />
       </Switch>
       <Route component={Footer} />
     </Router>

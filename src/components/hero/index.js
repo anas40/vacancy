@@ -8,14 +8,15 @@ function Hero() {
     document.querySelector('#resume').click()
   }
   function checkFile(element) {
-    return function(event){
-    event.stopPropagation()
-    if (element.value != "") {
-      history.push('/register')
+    return function (event) {
+      event.stopPropagation()
+      if (element.value !== "") {
+        console.log("A ",this.files[0]);
+        history.push('/register')
+      }
     }
   }
-  }
-  
+
   useEffect(() => {
     const resumeElement = document.querySelector('#resume')
     resumeElement.addEventListener('change', checkFile(resumeElement))
