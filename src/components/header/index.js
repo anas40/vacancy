@@ -1,6 +1,8 @@
-import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './header.css';
+
+import UploadButton from 'components/uploadButton';
 
 function Header() {
   return (
@@ -10,23 +12,12 @@ function Header() {
           <div className="logo"><span>V</span>acancy</div>
         </div>
         <div className="navbar d-flex justify-content-between ">
-          <div><a href="/">Home</a></div>
+          <div><Link to="/">Home</Link></div>
           <UploadButton />
         </div>
       </div>
     </header>
   );
-}
-
-function UploadButton() {
-  const { pathname } = useLocation()
-  function pickFile() {
-    document.querySelector('#resume').click()
-  }
-  if (pathname === "/register") return ""
-  return (<div>
-    <button className="btn" onClick={pickFile}>Upload Resume</button>
-  </div>)
 }
 
 export default Header;
