@@ -1,4 +1,4 @@
-import '../assets/css/signup.css'
+import 'assets/css/signup.css'
 function Signup() {
   function submitForm(event) {
     event.preventDefault()

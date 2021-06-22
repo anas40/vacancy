@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom';
 
-import Footer from './components/footer/index.js';
-import Header from './components/header/index.js';
-import Home from './pages/home.js';
-import Signup from './pages/signup.js'
+import Footer from 'components/footer/index.js';
+import Header from 'components/header/index.js';
+import Home from 'pages/home.js';
+import Signup from 'pages/signup.js'
 
 function App() {
   return (

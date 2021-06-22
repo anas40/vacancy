@@ -1,9 +1,9 @@
-import Hero from '../components/hero';
-import KeyElement from '../components/key-element'
+import Hero from 'components/hero';
+import KeyElement from 'components/key-element'
 
-import space from '../assets/images/astronaut.jpg';
-import dog from '../assets/images/dog.jpg'
-import ruler from '../assets/images/ruler.jpg'
+import space from 'assets/images/astronaut.jpg';
+import dog from 'assets/images/dog.jpg'
+import ruler from 'assets/images/ruler.jpg'
 
 function Home() {
 
