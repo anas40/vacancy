@@ -11,8 +11,21 @@ function Hero() {
     return function (event) {
       event.stopPropagation()
       if (element.value !== "") {
-        console.log("A ",this.files[0]);
-        history.push('/register')
+        const fd = new FormData()
+        const resume = this.files[0]
+        fd.append('resume',resume)
+        fetch('http://ec2-3-108-44-173.ap-south-1.compute.amazonaws.com:3000/upload',{
+          method:'POST',
+          body:fd
+        })
+        .then(res=>{
+          console.log(res)
+          history.push('/register')
+        })
+        .catch((er)=>{
+          console.log(er)
+          alert("Upload failed, please try again")
+        })
       }
     }
   }
