@@ -21,6 +21,7 @@ footer .links a {
     text-align: left;
     line-height: 3rem;
     font-size: 20px;
+    display: block;
 }
 
 footer .links button,footer .links button:hover {
