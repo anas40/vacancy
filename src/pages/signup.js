@@ -1,12 +1,17 @@
 import 'assets/css/signup.css'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { fileContext } from 'context/fileContext'
 
 import fileIcon from 'assets/icons/fileIcon.png'
+import successLogo from 'assets/icons/right.svg'
+import failedLogo from 'assets/icons/wrong.svg'
+
 
 function Signup() {
-  const [file] = useContext(fileContext)
+  const [file, setFile] = useContext(fileContext)
+  const [success, setSuccess] = useState(false)
+  const [failed, setFailed] = useState(false)
   const history = useHistory()
   console.log(window.screen.height, window.screen.width);
   function submitForm(event) {
@@ -20,21 +25,63 @@ function Signup() {
       method: 'POST',
       body
     })
-      .then(res => res.json())
+      .then(async res => {
+        if (res.status >= 300)
+          return {
+            error: true,
+            message: await res.text()
+          }
+        return {
+          error: false,
+          message: await res.text()
+        }
+      })
       .then(res => {
         console.log(res)
-        alert("success")
+        if (res.error) {
+          setFailed(res.message)
+        }
+        else {
+          setSuccess(true)
+          setFile(undefined)
+        }
       })
       .catch(error => {
+        setFailed("Failed, either you are already registered or try again later!")
         console.log(error)
-        alert("fail")
       })
   }
 
   useEffect(() => {
     if (!file) history.push('/')
-  })
+  }, [])
 
+  if (success) {
+    return (
+      <main>
+        <div className="fullView  justify-content-center d-flex align-items-center">
+          <div className="form-container msg-box">
+            <img src={successLogo} alt="request successful" />
+            <div className="text success">Resume uploaded successfully!</div>
+          </div>
+        </div>
+      </main>
+    )
+  }
+
+  if (failed) {
+    return (
+      <main>
+        <div className="fullView  justify-content-center d-flex align-items-center">
+          <div className="form-container msg-box">
+            <img src={failedLogo} alt="request failed, try again" />
+            <div className="text error">{failed}</div>
+            <button className="btn" onClick={() => setFailed(false)}>Try Again</button>
+          </div>
+        </div>
+      </main>
+    )
+  }
   return (
     <main>
       <div className="fullView d-flex align-items-center">
