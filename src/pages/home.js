@@ -20,16 +20,16 @@ function Home() {
     const body = new FormData()
     body.append('resume', file)
 
-    // fetch('http://ec2-3-108-44-173.ap-south-1.compute.amazonaws.com:3000/upload', {
-    //   method: 'POST',
-    //   body
-    // })
-    //   .then(res => {
-    //     console.log(res)
-    //   })
-    //   .catch(error => {
-    //     console.log(error)
-    //   })
+    fetch('http://ec2-3-108-44-173.ap-south-1.compute.amazonaws.com:3000/upload', {
+      method: 'POST',
+      body
+    })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(error => {
+        console.log(error)
+      })
 
   }
 
