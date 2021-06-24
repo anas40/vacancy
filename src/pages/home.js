@@ -1,41 +1,49 @@
+import { useState, useContext, useEffect } from 'react'
 import Hero from 'components/hero';
 import KeyElement from 'components/key-element'
+import { useHistory } from 'react-router-dom'
+import { fileContext } from 'context/fileContext'
 
-import space from 'assets/images/astronaut.jpg';
-import dog from 'assets/images/dog.jpg'
-import ruler from 'assets/images/ruler.jpg'
+
+import sections from 'assets/data/homeSection'
 
 function Home() {
 
-  const boxes = [
-    {
-      key: "dog",
-      image: dog,
-      heading: "Your Caring Friend",
-      para: "Vacancy is your best friend when it comes to your professional journey. Whether it is to choose a path from many or know more details about your career. Vacancy will help you in every way possible.",
-      buttonText: "Join Now",
-      invert:false
-    },
-    {
-      key: "ruler",
-      image: ruler,
-      heading: "Stay Organised throughout the process",
-      para: "Manage each application from a single place. Monitor your progress and stay organized. See ya spreadsheets.",
-      buttonText: "Become a member",
-      invert:true
-    },
-    {
-      key: "space",
-      image: space,
-      heading: "Explore The Undiscovered",
-      para: "What you seek is seeking you. We apply to many job post on your behalf so that you dont miss out any opportunity.",
-      buttonText: "Explore Now",
-      invert:false
-    }
-  ]
+  const [boxes] = useState(sections)
+  const [selectedFirst,setSelectedFirst] = useState(false)
+  const history = useHistory()
+  const [file, setFile] = useContext(fileContext)
+
+
+  function sendFile(file) {
+
+    const body = new FormData()
+    body.append('resume', file)
+
+    // fetch('http://ec2-3-108-44-173.ap-south-1.compute.amazonaws.com:3000/upload', {
+    //   method: 'POST',
+    //   body
+    // })
+    //   .then(res => {
+    //     console.log(res)
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
+
+  }
+
+  useEffect(() => {
+    if (file) sendFile(file) 
+    if(selectedFirst && file){
+      history.push('/register')
+    }   
+  }, [file,selectedFirst])
+
+
   return (
     <main>
-      <Hero />
+      <Hero setFile={setFile} setSelectedFirst={setSelectedFirst} />
       {boxes.map(box => <KeyElement key={box.key} box={box} />)}
     </main>
   );
