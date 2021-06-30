@@ -1,7 +1,7 @@
-import 'assets/css/signup.css'
 import { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { fileContext } from 'context/fileContext'
+import 'assets/css/signup.css'
 
 import fileIcon from 'assets/icons/fileIcon.png'
 import successLogo from 'assets/icons/right.svg'
@@ -84,7 +84,7 @@ function Signup() {
   }
   return (
     <main>
-      <div className="fullView d-flex align-items-center">
+      <div className="fullView justify-content-center d-flex align-items-center">
         <div className="form-container">
           <form className="signup-form" id="form" name="signup-form" onSubmit={submitForm}>
             <h1 className="my-4">Signup Form </h1>
