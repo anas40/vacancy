@@ -1,5 +1,5 @@
 import space from 'assets/images/astronaut.jpg';
-import dog from 'assets/images/dog.jpg'
+import dog from 'assets/images/doggo.jpg'
 import ruler from 'assets/images/ruler.jpg'
 
 export default [
