@@ -105,7 +105,10 @@ function Signup() {
             </div>
             <div className="contact">
               <label htmlFor="contact">Contact No.</label>
-              <input type="text" id="contact" name="contact" required placeholder="Your 10 digit contact no." maxLength="10" minLength="10" />
+              <div className="d-flex">
+                <div className="country-code">+65</div>
+                <input type="text" id="contact" name="contact" required placeholder="Your 8 digit contact no." maxLength="8" minLength="8" />
+              </div>
             </div>
             <div className="email">
               <label htmlFor="email">Email</label>
