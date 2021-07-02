@@ -58,8 +58,10 @@
 }
 
 .fullView .msg-box{
-    padding: 40px 10px;
-    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
 }
 .msg-box .text{
